@@ -1,0 +1,138 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: black;
+    color: white;
+    height: 40em;
+    position: relative; 
+    overflow: hidden;
+}
+header{
+    margin: 10px;
+    padding: 5px;
+    display: inline-block;
+    text-align: center;
+}
+.heading {
+    font-family: 'Arial', sans-serif;
+    font-size: 50px;
+    color: yellow;
+    text-shadow: 0 0 10px white, 0 0 20px yellow, 0 0 30px red;
+    /* text-align: center; */
+    margin: 10px;
+    animation: glow 2s ease-in-out infinite alternate, bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0); 
+    }
+    50% {
+        transform: translateX(-30px); 
+    }
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px white, 0 0 20px yellow, 0 0 30px red;
+    }
+    to {
+        text-shadow: 0 0 15px white, 0 0 35px yellow, 0 0 40px red;
+    }
+}
+
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 15px 0;
+}
+
+.description {
+    font-family: 'Verdana', sans-serif;
+    font-size: 18px;
+    color: white;
+    text-align: center; 
+    /* margin: 10px; */
+    width: 50%;
+    line-height: 1.5;
+}
+
+.container{
+    font-size: 10px;
+    width: 40em;
+    height: 40em;
+    position: relative;
+}
+.sun{
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    background-color: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 3em white ;
+}
+
+.earth, 
+.moon{
+    position: absolute;
+    border-style: solid;
+    border-color: white transparent transparent transparent; /*for the moon and earth line */
+    border-width: 0.1em 0.1em 0 0; /* for changing length of the orbit of moon and earth*/
+    border-radius: 50%;                      
+}
+.earth{
+    top: 5em;
+    left: 5em;
+    width: 30em;
+    height: 30em;
+    animation: orbit 36.5s linear infinite;
+}
+.moon{
+    top: 0;
+    right: 0;
+    width: 8em;
+    height: 8em;
+    animation: orbit 5s linear infinite;
+}
+.earth::before,
+.moon::before{
+    content:  '';  /*i use this for showing moon and sun.*/
+    position: absolute;
+    border-radius: 50%;
+}
+.earth::before{
+    top: 2.8em;
+    right: 2.8em;
+    width: 3em;
+    height: 3em;
+    background-color: aqua;
+}
+.moon::before{
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background-color: silver;
+}
+
+@keyframes orbit{
+    to{
+        transform: rotate(360deg);
+    }
+} 
+
+
+
+
+
+
+
